@@ -24,11 +24,11 @@ public class week1_problem3 {
     {
         Scanner sc = new Scanner(System.in);
         int arrlength,actualout,expectout;
-        arrlength = sc.nextInt();
+        arrlength = sc.nextInt();           //Enter length of array
         int input[] = new int[arrlength];
         for(int i=0;i<arrlength;i++)
-            input[i] = sc.nextInt();
-        expectout = sc.nextInt();
+            input[i] = sc.nextInt();        //Enter elements of array
+        expectout = sc.nextInt();           //Enter expected output
         actualout = findmaxXOR(input);
         if(actualout == expectout)
             System.out.println("Test case passed");
