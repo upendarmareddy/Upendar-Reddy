@@ -2,6 +2,10 @@ import java.io.*;
 import java.util.*;
 
 public class week1_problem4 {
+    public static boolean ispoweroftwo(int n)
+    {
+        return ((n&(n-1))==0);
+    }
     public static int [] min_replacements(int input[],int n,int result[])    // applying bruteforce technique
     {
         int count,a;
@@ -20,7 +24,12 @@ public class week1_problem4 {
                 }
                 else
                 {
-                    a=a-1;
+                    if(ispoweroftwo(a+1))
+                    a=a+1;
+                    else if(ispoweroftwo(a-1))
+                        a=a-1;
+                    else
+                        a=a-1;
                     count++;
                 }
             }
@@ -45,7 +54,6 @@ public class week1_problem4 {
             expectedout[i]=sc.nextInt();//enter expected outputs
         }
         actualout=min_replacements(input,n_inputs,actualout);//calling min_replacements method which returns output array
-
         for (int i=0; i<n_inputs; i++)
         {
 
